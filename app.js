@@ -1,22 +1,62 @@
 // Сайт «Deutsch». Всё содержимое лежит в папке content:
-//   content/index.json — список разделов, тем и страниц (меню сайта)
-//   content/<раздел>/<страница>.md — сами страницы
-// Чтобы добавить страницу, нужен .md-файл и строчка о нём в index.json.
+//   content/index.json — список разделов, тем и страниц (меню сайта), названия на трёх языках
+//   content/<язык>/<раздел>/<страница>.md — сами страницы (uk — главный, ru и en — переводы)
+// Чтобы добавить страницу, нужны три .md-файла и строчка о ней в index.json.
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const bust = '?t=' + Date.now(); // чтобы телефон не показывал старую версию
 
+// ---------- язык ----------
+const LANGS = ['uk', 'ru', 'en'];
+let LANG = 'uk';
+try { const l = localStorage.getItem('lang'); if (LANGS.includes(l)) LANG = l; } catch (e) {}
+
+const UI = {
+  uk: { home: 'Головна', open: 'Відкрити', recent: 'Нещодавно додано', updated: 'Оновлено', prev: '← Назад', next: 'Далі →', onPage: 'На сторінці',
+        empty: 'Тут поки порожньо.', soon: 'Поки порожньо:', about: 'Як влаштований сайт', search: 'Пошук…', nothing: 'Нічого не знайдено',
+        missing: 'Файл сторінки не знайдено.', notfound: 'Сторінку не знайдено', toHome: 'На головну', loadFail: 'Не вдалося завантажити сайт',
+        theme: 'Світла або темна тема', menu: 'Меню',
+        types: { rule: 'Правило', phr: 'Фрази', fix: 'Розбір помилок', word: 'Слова' }, one: 'сторінка', few: 'сторінки', many: 'сторінок' },
+  ru: { home: 'Главная', open: 'Открыть', recent: 'Недавно добавлено', updated: 'Обновлено', prev: '← Назад', next: 'Дальше →', onPage: 'На странице',
+        empty: 'Здесь пока пусто.', soon: 'Пока пусто:', about: 'Как устроен сайт', search: 'Поиск…', nothing: 'Ничего не найдено',
+        missing: 'Файл страницы не найден.', notfound: 'Страница не найдена', toHome: 'На главную', loadFail: 'Не удалось загрузить сайт',
+        theme: 'Светлая или тёмная тема', menu: 'Меню',
+        types: { rule: 'Правило', phr: 'Фразы', fix: 'Разбор ошибок', word: 'Слова' }, one: 'страница', few: 'страницы', many: 'страниц' },
+  en: { home: 'Home', open: 'Open', recent: 'Recently added', updated: 'Updated', prev: '← Back', next: 'Next →', onPage: 'On this page',
+        empty: 'Nothing here yet.', soon: 'Still empty:', about: 'How the site works', search: 'Search…', nothing: 'Nothing found',
+        missing: 'Page file not found.', notfound: 'Page not found', toHome: 'Back to home', loadFail: 'Could not load the site',
+        theme: 'Light or dark theme', menu: 'Menu',
+        types: { rule: 'Rule', phr: 'Phrases', fix: 'Mistakes', word: 'Words' }, one: 'page', few: 'pages', many: 'pages' },
+};
+const T = () => UI[LANG];
+
+// Названия в index.json лежат как {uk, ru, en}; выбираем нужный язык (если нет — украинский)
+function localize(v) {
+  if (Array.isArray(v)) return v.map(localize);
+  if (v && typeof v === 'object') {
+    const keys = Object.keys(v);
+    if (keys.includes('uk') && keys.every((k) => LANGS.includes(k))) return v[LANG] || v.uk || '';
+    const out = {};
+    for (const k of keys) out[k] = localize(v[k]);
+    return out;
+  }
+  return v;
+}
+
+let RAW = null;
 let INDEX = null;
 const pageCache = {};
 let searchReady = null;
 
 async function getPage(slug) {
-  if (!(slug in pageCache)) {
-    const r = await fetch('content/' + slug + '.md' + bust);
-    pageCache[slug] = r.ok ? await r.text() : null;
+  const key = LANG + '/' + slug;
+  if (!(key in pageCache)) {
+    let r = await fetch('content/' + key + '.md' + bust);
+    if (!r.ok && LANG !== 'uk') r = await fetch('content/uk/' + slug + '.md' + bust); // нет перевода — показываем украинский
+    pageCache[key] = r.ok ? await r.text() : null;
   }
-  return pageCache[slug];
+  return pageCache[key];
 }
 
 // Тема видна в меню, если она не скрытая и в ней есть хотя бы одна страница
@@ -37,19 +77,23 @@ function fmtDate(d) {
   return `${day}.${m}.${y}`;
 }
 
-const plural = (n) => (n % 10 === 1 && n % 100 !== 11 ? 'страница' : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 'страницы' : 'страниц');
+const plural = (n) => {
+  const t = T();
+  if (LANG === 'en') return n === 1 ? t.one : t.many;
+  return n % 10 === 1 && n % 100 !== 11 ? t.one : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? t.few : t.many;
+};
 const countPages = (s) => visGroups(s).reduce((a, g) => a + g.pages.length, 0);
 
 // ---------- кирпичики ----------
-const TYPE_CLASS = { 'Правило': 't-rule', 'Фразы': 't-phr', 'Разбор ошибок': 't-fix', 'Слова': 't-word' };
-const badge = (t) => (t ? `<span class="badge ${TYPE_CLASS[t] || ''}">${esc(t)}</span>` : '');
+const TYPE_CLASS = { rule: 't-rule', phr: 't-phr', fix: 't-fix', word: 't-word' };
+const badge = (t) => (t ? `<span class="badge ${TYPE_CLASS[t] || ''}">${esc(T().types[t] || t)}</span>` : '');
 
 function pageCard(p, where, sid) {
   return `<a class="pcard" ${sid ? `data-s="${sid}"` : ''} href="#/${p.slug}">
     <div class="pcard-top">${badge(p.type)}${where ? `<span class="pcard-where">${esc(where)}</span>` : ''}</div>
     <div class="pcard-title">${esc(p.title)}</div>
     <div class="pcard-desc">${esc(p.desc || '')}</div>
-    <div class="pcard-go">Открыть <span aria-hidden="true">→</span></div>
+    <div class="pcard-go">${T().open} <span aria-hidden="true">→</span></div>
   </a>`;
 }
 
@@ -72,7 +116,7 @@ function renderTabs(sectionId) {
 }
 
 function renderSidebar(sectionId, slug) {
-  let html = `<a class="side-home ${!sectionId ? 'active' : ''}" href="#/">🏠 Главная</a>`;
+  let html = `<a class="side-home ${!sectionId ? 'active' : ''}" href="#/">🏠 ${T().home}</a>`;
   for (const s of INDEX.sections) {
     const current = s.id === sectionId;
     html += `<a class="side-section ${current && !slug ? 'active' : ''}" href="#/${s.id}"><span>${s.icon || ''} ${esc(s.short || s.title)}</span><span class="side-count">${countPages(s)}</span></a>`;
@@ -83,12 +127,12 @@ function renderSidebar(sectionId, slug) {
       html += g.pages.map((p) => `<a class="side-page ${p.slug === slug ? 'active' : ''}" href="#/${p.slug}">${esc(p.title)}</a>`).join('');
     }
   }
-  html += `<a class="side-about" href="#/deutsch/o-sajte">Как устроен сайт</a>`;
+  html += `<a class="side-about" href="#/deutsch/o-sajte">${T().about}</a>`;
   $('sidebar').innerHTML = html;
 }
 
 function renderCrumbs(parts) {
-  let html = `<a href="#/" aria-label="Главная">🏠</a>`;
+  let html = `<a href="#/" aria-label="${T().home}">🏠</a>`;
   parts.forEach((p, i) => {
     html += `<span class="sep">›</span>`;
     html += i === parts.length - 1 ? `<span class="here">${esc(p.title)}</span>` : p.href ? `<a href="${p.href}">${esc(p.title)}</a>` : `<span>${esc(p.title)}</span>`;
@@ -112,7 +156,7 @@ function showHome() {
         <div class="bigcard-title">${esc(s.title)}</div>
         <div class="bigcard-desc">${esc(s.description || '')}</div>
         <div class="chips">${topics}</div>
-        <div class="bigcard-foot"><span>${n} ${plural(n)}</span><span class="pcard-go">Открыть <span aria-hidden="true">→</span></span></div>
+        <div class="bigcard-foot"><span>${n} ${plural(n)}</span><span class="pcard-go">${T().open} <span aria-hidden="true">→</span></span></div>
       </a>`;
     })
     .join('');
@@ -121,7 +165,7 @@ function showHome() {
     .sort((a, b) => b.page.updated.localeCompare(a.page.updated))
     .slice(0, 4);
   const recentHtml = recent.length
-    ? `<div class="block-title">Недавно добавлено</div><div class="pgrid">${recent.map((x) => pageCard(x.page, x.section.short || x.section.title, x.section.id)).join('')}</div>`
+    ? `<div class="block-title">${T().recent}</div><div class="pgrid">${recent.map((x) => pageCard(x.page, x.section.short || x.section.title, x.section.id)).join('')}</div>`
     : '';
   $('doc').className = 'doc wide';
   $('doc').innerHTML = `<div class="hero"><h1>${esc(INDEX.title)}</h1><p>${esc(INDEX.subtitle || '')}</p></div><div class="bigcards">${cards}</div>${recentHtml}`;
@@ -136,9 +180,9 @@ function showSection(s) {
   const groups = visGroups(s);
   const soon = s.groups.filter((g) => !g.hidden && !g.pages.length);
   let html = `<h1>${s.icon || ''} ${esc(s.title)}</h1><p class="lead">${esc(s.description || '')}</p>`;
-  html += groups.length ? groups.map(moduleBlock).join('') : `<p class="muted">Здесь пока пусто.</p>`;
+  html += groups.length ? groups.map(moduleBlock).join('') : `<p class="muted">${T().empty}</p>`;
   if (soon.length)
-    html += `<div class="soon"><span class="soon-label">Пока пусто:</span>${soon.map((g) => `<span class="chip dim">${g.icon || ''} ${esc(g.title)}</span>`).join('')}</div>`;
+    html += `<div class="soon"><span class="soon-label">${T().soon}</span>${soon.map((g) => `<span class="chip dim">${g.icon || ''} ${esc(g.title)}</span>`).join('')}</div>`;
   $('doc').className = 'doc wide';
   $('doc').dataset.s = s.id;
   $('doc').innerHTML = html;
@@ -153,7 +197,7 @@ async function showPage(found, anchor) {
   const md = await getPage(page.slug);
   if (md === null) {
     $('doc').className = 'doc';
-    $('doc').innerHTML = `<h1>${esc(page.title)}</h1><p class="muted">Файл страницы не найден.</p>`;
+    $('doc').innerHTML = `<h1>${esc(page.title)}</h1><p class="muted">${T().missing}</p>`;
     $('toc').innerHTML = '';
     return;
   }
@@ -165,7 +209,7 @@ async function showPage(found, anchor) {
   if (h1) {
     const meta = document.createElement('div');
     meta.className = 'page-meta';
-    meta.innerHTML = badge(page.type) + (page.updated ? `<span>Обновлено: ${fmtDate(page.updated)}</span>` : '');
+    meta.innerHTML = badge(page.type) + (page.updated ? `<span>${T().updated}: ${fmtDate(page.updated)}</span>` : '');
     h1.after(meta);
   }
   // внизу — переход к соседним страницам раздела
@@ -176,8 +220,8 @@ async function showPage(found, anchor) {
     const nav = document.createElement('div');
     nav.className = 'pagenav';
     nav.innerHTML =
-      (prev ? `<a class="pagenav-link" href="#/${prev.page.slug}"><span class="pagenav-dir">← Назад</span><span class="pagenav-title">${esc(prev.page.title)}</span></a>` : '<span></span>') +
-      (next ? `<a class="pagenav-link next" href="#/${next.page.slug}"><span class="pagenav-dir">Дальше →</span><span class="pagenav-title">${esc(next.page.title)}</span></a>` : '<span></span>');
+      (prev ? `<a class="pagenav-link" href="#/${prev.page.slug}"><span class="pagenav-dir">${T().prev}</span><span class="pagenav-title">${esc(prev.page.title)}</span></a>` : '<span></span>') +
+      (next ? `<a class="pagenav-link next" href="#/${next.page.slug}"><span class="pagenav-dir">${T().next}</span><span class="pagenav-title">${esc(next.page.title)}</span></a>` : '<span></span>');
     doc.append(nav);
   }
   // широкие таблицы листаются вбок, а не ломают страницу на телефоне
@@ -191,7 +235,7 @@ async function showPage(found, anchor) {
   const heads = [...doc.querySelectorAll('h2, h3')];
   heads.forEach((h, i) => (h.id = 's' + (i + 1)));
   $('toc').innerHTML = heads.length
-    ? `<div class="toc-title">На странице</div>` +
+    ? `<div class="toc-title">${T().onPage}</div>` +
       heads.map((h) => `<a class="${h.tagName === 'H3' ? 'lvl3' : ''}" data-id="${h.id}" href="#/${page.slug}">${esc(h.textContent)}</a>`).join('')
     : '';
   watchHeadings(heads);
@@ -223,7 +267,7 @@ async function route() {
   if (section) { showSection(section); window.scrollTo(0, 0); return; }
   const found = allPages(true).find((x) => x.page.slug === path);
   if (found) { window.scrollTo(0, 0); await showPage(found); return; }
-  $('doc').innerHTML = `<h1>Страница не найдена</h1><p><a href="#/">На главную</a></p>`;
+  $('doc').innerHTML = `<h1>${T().notfound}</h1><p><a href="#/">${T().toHome}</a></p>`;
 }
 
 // ---------- поиск ----------
@@ -255,7 +299,7 @@ async function runSearch(q) {
   hits.sort((a, b) => a.rank - b.rank);
   box.innerHTML = hits.length
     ? hits.slice(0, 20).map((h) => `<a href="#/${h.d.page.slug}"><div class="where">${esc(h.d.section.short || h.d.section.title)} · ${esc(h.d.group.title)}</div><div>${esc(h.d.page.title)}</div><div class="snip">${h.snip}</div></a>`).join('')
-    : `<div class="empty">Ничего не найдено</div>`;
+    : `<div class="empty">${T().nothing}</div>`;
   box.hidden = false;
 }
 
@@ -283,14 +327,37 @@ $('toc').addEventListener('click', (e) => {
   if (el) el.scrollIntoView({ behavior: 'smooth' });
 });
 
+// ---------- переключатель языка ----------
+function applyLang() {
+  document.documentElement.lang = LANG;
+  INDEX = localize(RAW);
+  const t = T();
+  $('search').placeholder = t.search;
+  $('themeBtn').setAttribute('aria-label', t.theme);
+  $('menuBtn').setAttribute('aria-label', t.menu);
+  document.querySelectorAll('#lang button').forEach((b) => b.classList.toggle('active', b.dataset.lang === LANG));
+}
+
+$('lang').addEventListener('click', (e) => {
+  const b = e.target.closest('button[data-lang]');
+  if (!b || b.dataset.lang === LANG) return;
+  LANG = b.dataset.lang;
+  try { localStorage.setItem('lang', LANG); } catch (err) {}
+  searchReady = null;
+  $('searchResults').hidden = true;
+  applyLang();
+  route();
+});
+
 // ---------- запуск ----------
 (async function start() {
   try {
-    INDEX = await (await fetch('content/index.json' + bust)).json();
+    RAW = await (await fetch('content/index.json' + bust)).json();
   } catch (e) {
-    $('doc').innerHTML = '<h1>Не удалось загрузить сайт</h1><p class="muted">Не читается content/index.json.</p>';
+    $('doc').innerHTML = `<h1>${T().loadFail}</h1><p class="muted">content/index.json</p>`;
     return;
   }
+  applyLang();
   window.addEventListener('hashchange', route);
   route();
 })();

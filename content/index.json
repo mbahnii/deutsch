@@ -1,133 +1,297 @@
 {
-  "title": "Deutsch — мои материалы",
-  "subtitle": "Всё, что я разбирал с Claude по немецкому. Выбери, что сейчас нужно.",
+  "title": {
+    "uk": "Deutsch — мої матеріали",
+    "ru": "Deutsch — мои материалы",
+    "en": "Deutsch — my materials"
+  },
+  "subtitle": {
+    "uk": "Усе, що я розбирав із Claude з німецької. Обери, що зараз потрібно.",
+    "ru": "Всё, что я разбирал с Claude по немецкому. Выбери, что сейчас нужно.",
+    "en": "Everything I worked through with Claude in German. Pick what you need right now."
+  },
   "sections": [
     {
       "id": "dtz",
-      "title": "DTZ — подготовка к экзамену",
-      "short": "DTZ — экзамен",
       "icon": "🎓",
-      "description": "Только то, что нужно для экзамена. Темы — это части самого экзамена.",
+      "title": {
+        "uk": "DTZ — підготовка до іспиту",
+        "ru": "DTZ — подготовка к экзамену",
+        "en": "DTZ — exam preparation"
+      },
+      "short": {
+        "uk": "DTZ — іспит",
+        "ru": "DTZ — экзамен",
+        "en": "DTZ — exam"
+      },
+      "description": {
+        "uk": "Лише те, що потрібно для іспиту. Теми — це частини самого іспиту.",
+        "ru": "Только то, что нужно для экзамена. Темы — это части самого экзамена.",
+        "en": "Only what you need for the exam. Topics are the parts of the exam itself."
+      },
       "groups": [
         {
-          "title": "Об экзамене",
+          "title": {
+            "uk": "Про іспит",
+            "ru": "Об экзамене",
+            "en": "About the exam"
+          },
           "icon": "📋",
-          "desc": "Формат, время, баллы.",
+          "desc": {
+            "uk": "Формат, час, бали.",
+            "ru": "Формат, время, баллы.",
+            "en": "Format, timing, scoring."
+          },
           "pages": []
         },
         {
-          "title": "Schreiben — письмо",
+          "title": {
+            "uk": "Schreiben — письмо",
+            "ru": "Schreiben — письмо",
+            "en": "Schreiben — writing"
+          },
           "icon": "✉️",
-          "desc": "Как писать письмо или мейл и какие ошибки я делаю.",
+          "desc": {
+            "uk": "Як писати лист чи мейл і які помилки я роблю.",
+            "ru": "Как писать письмо или мейл и какие ошибки я делаю.",
+            "en": "How to write a letter or email and which mistakes I make."
+          },
           "pages": [
             {
               "slug": "dtz/pisma-formuly",
-              "title": "Готовые фразы для письма",
-              "type": "Фразы",
-              "desc": "Начало, просьбы, вопросы и концовки — из них собирается любое письмо.",
+              "type": "phr",
+              "title": {
+                "uk": "Готові фрази для листа",
+                "ru": "Готовые фразы для письма",
+                "en": "Ready-made phrases for letters"
+              },
+              "desc": {
+                "uk": "Початок, прохання, питання та кінцівки — з них збирається будь-який лист.",
+                "ru": "Начало, просьбы, вопросы и концовки — из них собирается любое письмо.",
+                "en": "Openings, requests, questions and closings — any letter can be built from them."
+              },
               "updated": "2026-11-11"
             },
             {
               "slug": "dtz/razbor-weihnachtsfeier",
-              "title": "Письмо родителям о празднике",
-              "type": "Разбор ошибок",
-              "desc": "Мои 10 ошибок в письме о Weihnachtsfeier и как правильно.",
+              "type": "fix",
+              "title": {
+                "uk": "Лист батькам про свято",
+                "ru": "Письмо родителям о празднике",
+                "en": "Letter to parents about a party"
+              },
+              "desc": {
+                "uk": "Мої 10 помилок у листі про Weihnachtsfeier і як правильно.",
+                "ru": "Мои 10 ошибок в письме о Weihnachtsfeier и как правильно.",
+                "en": "My 10 mistakes in a letter about the Weihnachtsfeier and how to fix them."
+              },
               "updated": "2026-11-11"
             },
             {
               "slug": "dtz/razbor-wohnung",
-              "title": "Мейл о квартире",
-              "type": "Разбор ошибок",
-              "desc": "Вопросы арендодателю, исправленный мейл и слова по теме «жильё».",
+              "type": "fix",
+              "title": {
+                "uk": "Мейл про квартиру",
+                "ru": "Мейл о квартире",
+                "en": "Email about a flat"
+              },
+              "desc": {
+                "uk": "Питання орендодавцю, виправлений мейл і слова за темою «житло».",
+                "ru": "Вопросы арендодателю, исправленный мейл и слова по теме «жильё».",
+                "en": "Questions for a landlord, a corrected email and words on the topic of housing."
+              },
               "updated": "2026-11-11"
             }
           ]
         },
         {
-          "title": "Sprechen — устная часть",
+          "title": {
+            "uk": "Sprechen — усна частина",
+            "ru": "Sprechen — устная часть",
+            "en": "Sprechen — speaking"
+          },
           "icon": "🗣️",
-          "desc": "Рассказ о себе, описание картинки, планирование.",
+          "desc": {
+            "uk": "Розповідь про себе, опис картинки, планування.",
+            "ru": "Рассказ о себе, описание картинки, планирование.",
+            "en": "Talking about yourself, describing a picture, planning."
+          },
           "pages": []
         },
         {
-          "title": "Lesen — чтение",
+          "title": {
+            "uk": "Lesen — читання",
+            "ru": "Lesen — чтение",
+            "en": "Lesen — reading"
+          },
           "icon": "📖",
-          "desc": "Задания на чтение.",
+          "desc": {
+            "uk": "Завдання на читання.",
+            "ru": "Задания на чтение.",
+            "en": "Reading tasks."
+          },
           "pages": []
         },
         {
-          "title": "Hören — аудирование",
+          "title": {
+            "uk": "Hören — аудіювання",
+            "ru": "Hören — аудирование",
+            "en": "Hören — listening"
+          },
           "icon": "🎧",
-          "desc": "Задания на слух.",
+          "desc": {
+            "uk": "Завдання на слух.",
+            "ru": "Задания на слух.",
+            "en": "Listening tasks."
+          },
           "pages": []
         }
       ]
     },
     {
       "id": "deutsch",
-      "title": "Немецкий язык",
-      "short": "Немецкий язык",
       "icon": "🇩🇪",
-      "description": "Правила и слова, которые пригодятся всегда, не только на экзамене.",
+      "title": {
+        "uk": "Німецька мова",
+        "ru": "Немецкий язык",
+        "en": "German language"
+      },
+      "short": {
+        "uk": "Німецька мова",
+        "ru": "Немецкий язык",
+        "en": "German language"
+      },
+      "description": {
+        "uk": "Правила та слова, які знадобляться завжди, не лише на іспиті.",
+        "ru": "Правила и слова, которые пригодятся всегда, не только на экзамене.",
+        "en": "Rules and words that are always useful, not only for the exam."
+      },
       "groups": [
         {
-          "title": "Грамматика",
+          "title": {
+            "uk": "Граматика",
+            "ru": "Грамматика",
+            "en": "Grammar"
+          },
           "icon": "🧩",
-          "desc": "Правила с таблицами и примерами.",
+          "desc": {
+            "uk": "Правила з таблицями та прикладами.",
+            "ru": "Правила с таблицами и примерами.",
+            "en": "Rules with tables and examples."
+          },
           "pages": [
             {
               "slug": "deutsch/pridatochnye",
-              "title": "Порядок слов: где стоит глагол",
-              "type": "Правило",
-              "desc": "После dass, weil, wenn, ob глагол уходит в конец. Вежливые вопросы.",
+              "type": "rule",
+              "title": {
+                "uk": "Порядок слів: де стоїть дієслово",
+                "ru": "Порядок слов: где стоит глагол",
+                "en": "Word order: where the verb goes"
+              },
+              "desc": {
+                "uk": "Після dass, weil, wenn, ob дієслово йде в кінець. Ввічливі питання.",
+                "ru": "После dass, weil, wenn, ob глагол уходит в конец. Вежливые вопросы.",
+                "en": "After dass, weil, wenn, ob the verb goes to the end. Polite questions."
+              },
               "updated": "2026-11-11"
             },
             {
               "slug": "deutsch/daty",
-              "title": "Даты",
-              "type": "Правило",
-              "desc": "Как читать и писать «am 7. Oktober», «vom 2. bis 3.», am или im.",
+              "type": "rule",
+              "title": {
+                "uk": "Дати",
+                "ru": "Даты",
+                "en": "Dates"
+              },
+              "desc": {
+                "uk": "Як читати й писати «am 7. Oktober», «vom 2. bis 3.», am чи im.",
+                "ru": "Как читать и писать «am 7. Oktober», «vom 2. bis 3.», am или im.",
+                "en": "How to read and write «am 7. Oktober», «vom 2. bis 3.», am or im."
+              },
               "updated": "2026-11-11"
             },
             {
               "slug": "deutsch/sie-vezhlivost",
-              "title": "Вежливое «Вы»",
-              "type": "Правило",
-              "desc": "Sie с большой буквы и könnten, wären, hätten для вежливых просьб.",
+              "type": "rule",
+              "title": {
+                "uk": "Ввічливе «Ви»",
+                "ru": "Вежливое «Вы»",
+                "en": "The polite «you»"
+              },
+              "desc": {
+                "uk": "Sie з великої літери та könnten, wären, hätten для ввічливих прохань.",
+                "ru": "Sie с большой буквы и könnten, wären, hätten для вежливых просьб.",
+                "en": "Sie with a capital letter and könnten, wären, hätten for polite requests."
+              },
               "updated": "2026-11-11"
             }
           ]
         },
         {
-          "title": "Слова и выражения",
+          "title": {
+            "uk": "Слова та вирази",
+            "ru": "Слова и выражения",
+            "en": "Words and phrases"
+          },
           "icon": "💬",
-          "desc": "Что с чем сочетается и какие слова не путать.",
+          "desc": {
+            "uk": "Що з чим поєднується і які слова не плутати.",
+            "ru": "Что с чем сочетается и какие слова не путать.",
+            "en": "What goes with what and which words not to mix up."
+          },
           "pages": [
             {
               "slug": "deutsch/glagoly-s-predlogami",
-              "title": "Глаголы с предлогами",
-              "type": "Слова",
-              "desc": "informieren über, sich erkundigen nach… и похожие слова, которые я путаю.",
+              "type": "word",
+              "title": {
+                "uk": "Дієслова з прийменниками",
+                "ru": "Глаголы с предлогами",
+                "en": "Verbs with prepositions"
+              },
+              "desc": {
+                "uk": "informieren über, sich erkundigen nach… та схожі слова, які я плутаю.",
+                "ru": "informieren über, sich erkundigen nach… и похожие слова, которые я путаю.",
+                "en": "informieren über, sich erkundigen nach… and similar words I mix up."
+              },
               "updated": "2026-11-11"
             }
           ]
         },
         {
-          "title": "Разборы заданий",
+          "title": {
+            "uk": "Розбори завдань",
+            "ru": "Разборы заданий",
+            "en": "Task breakdowns"
+          },
           "icon": "📝",
-          "desc": "Домашние задания и мои ошибки в них.",
+          "desc": {
+            "uk": "Домашні завдання та мої помилки в них.",
+            "ru": "Домашние задания и мои ошибки в них.",
+            "en": "Homework and my mistakes in it."
+          },
           "pages": []
         },
         {
-          "title": "О сайте",
+          "title": {
+            "uk": "Про сайт",
+            "ru": "О сайте",
+            "en": "About the site"
+          },
           "icon": "📌",
           "hidden": true,
           "pages": [
             {
               "slug": "deutsch/o-sajte",
-              "title": "Как устроен этот сайт",
               "type": "",
-              "desc": "",
+              "title": {
+                "uk": "Як влаштований сайт",
+                "ru": "Как устроен сайт",
+                "en": "How the site works"
+              },
+              "desc": {
+                "uk": "",
+                "ru": "",
+                "en": ""
+              },
               "updated": "2026-11-11"
             }
           ]
