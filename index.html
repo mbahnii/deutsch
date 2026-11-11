@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Deutsch — мои материалы</title>
+  <meta name="theme-color" content="#1f8a4c">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231f8a4c'/><text x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'>D</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Тема ставится до отрисовки, чтобы страница не мигала
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Меню">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+    </button>
+    <a class="brand" href="#/">
+      <span class="brand-mark">D</span>
+      <span class="brand-name">Deutsch</span>
+    </a>
+    <nav class="tabs" id="tabs"></nav>
+    <div class="search">
+      <input id="search" type="search" placeholder="Поиск…" autocomplete="off" aria-label="Поиск">
+      <div class="search-results" id="searchResults" hidden></div>
+    </div>
+    <button class="icon-btn" id="themeBtn" aria-label="Светлая или тёмная тема">
+      <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </header>
+
+  <div class="scrim" id="scrim" hidden></div>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="content">
+      <div class="crumbs" id="crumbs"></div>
+      <article class="doc" id="doc"><p class="muted">Загрузка…</p></article>
+    </main>
+    <aside class="toc" id="toc"></aside>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
