@@ -115,7 +115,23 @@
             "ru": "Рассказ о себе, описание картинки, планирование.",
             "en": "Talking about yourself, describing a picture, planning."
           },
-          "pages": []
+          "pages": [
+            {
+              "slug": "dtz/sprechen-frazy",
+              "type": "phr",
+              "title": {
+                "uk": "Фрази для розмови",
+                "ru": "Фразы для разговора",
+                "en": "Conversation phrases"
+              },
+              "desc": {
+                "uk": "«Йдеться про…», «з одного боку… з іншого…» та інші фрази для іспиту й розмови.",
+                "ru": "«Речь идёт о…», «с одной стороны… с другой…» и другие фразы для экзамена и разговора.",
+                "en": "\"It's about…\", \"on the one hand… on the other…\" and more phrases for the exam and conversation."
+              },
+              "updated": "2026-11-13"
+            }
+          ]
         },
         {
           "title": {
@@ -223,6 +239,21 @@
                 "en": "Sie with a capital letter and könnten, wären, hätten for polite requests."
               },
               "updated": "2026-11-11"
+            },
+            {
+              "slug": "deutsch/moechte",
+              "type": "rule",
+              "title": {
+                "uk": "Möchte, wollte, mochte",
+                "ru": "Möchte, wollte, mochte",
+                "en": "Möchte, wollte, mochte"
+              },
+              "desc": {
+                "uk": "Чому «möchtete» немає і як сказати «хотів» у минулому.",
+                "ru": "Почему «möchtete» нет и как сказать «хотел» в прошлом.",
+                "en": "Why \"möchtete\" doesn't exist and how to say \"wanted\" in the past."
+              },
+              "updated": "2026-11-13"
             }
           ]
         },
@@ -253,6 +284,21 @@
                 "en": "informieren über, sich erkundigen nach… and similar words I mix up."
               },
               "updated": "2026-11-11"
+            },
+            {
+              "slug": "deutsch/slova-dom",
+              "type": "word",
+              "title": {
+                "uk": "Слова для дому",
+                "ru": "Слова для дома",
+                "en": "Words for the home"
+              },
+              "desc": {
+                "uk": "einrichten, pflanzen чи bepflanzen, Balkonkasten і der Schaden.",
+                "ru": "einrichten, pflanzen или bepflanzen, Balkonkasten и der Schaden.",
+                "en": "einrichten, pflanzen vs bepflanzen, Balkonkasten and der Schaden."
+              },
+              "updated": "2026-11-13"
             }
           ]
         },
