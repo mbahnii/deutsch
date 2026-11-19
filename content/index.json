@@ -480,6 +480,21 @@
                 "en": "Phrases for getting an acquaintance into a class."
               },
               "updated": "2026-11-19"
+            },
+            {
+              "slug": "deutsch/raum-platz-karten",
+              "type": "word",
+              "title": {
+                "uk": "Raum, Platz, Karten",
+                "ru": "Raum, Platz, Karten",
+                "en": "Raum, Platz, Karten"
+              },
+              "desc": {
+                "uk": "Чим відрізняються Raum, Platz і Zimmer та два значення Karten.",
+                "ru": "Чем отличаются Raum, Platz и Zimmer и два значения Karten.",
+                "en": "How Raum, Platz and Zimmer differ and the two meanings of Karten."
+              },
+              "updated": "2026-11-19"
             }
           ]
         },

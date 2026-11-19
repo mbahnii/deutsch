@@ -12,7 +12,7 @@ Tips from the course teachers collected in one place to reread before the exam.
 
 ## Hören — listening
 
-Read the question before the recording and watch what is asked: person, reason, time. If several times are named, link each one to its event (start of the course, registration deadline).
+For practice: first listen to the recording without the text, then check against the transcript and write down unfamiliar words ([Raum, Platz, Karten](#/deutsch/raum-platz-karten)). Read the question before the recording and watch what is asked: person, reason, time. If several times are named, link each one to its event (start of the course, registration deadline).
 
 ## Lesen — reading
 
