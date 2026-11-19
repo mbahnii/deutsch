@@ -1,0 +1,560 @@
+{
+ "sections": [
+  {
+   "title": "Dialog 1: Zusammen kochen",
+   "task": "Sie sind Freunde. Sie wollen etwas zusammen kochen. Was wollen Sie kochen? · Welche Zutaten brauchen Sie? · Wer soll die Zutaten kaufen? · Wann und wo wollen Sie kochen? · Wen möchten Sie noch einladen? · …",
+   "lines": [
+    {
+     "w": "A",
+     "t": "Hallo! Wollen wir anfangen? Wir möchten ja zusammen kochen. Was meinst du, was sollen wir kochen?",
+     "n": "Thema + Frage"
+    },
+    {
+     "w": "B",
+     "t": "Ich habe eine Idee: Wie wäre es mit Borschtsch? Das ist ein typisches Gericht aus meinem Heimatland, und ich koche es sehr gern.",
+     "n": "Vorschlag + Grund"
+    },
+    {
+     "w": "A",
+     "t": "Borschtsch klingt lecker, aber leider esse ich keine Rote Bete. Ich mag den Geschmack einfach nicht. Vielleicht kochen wir lieber Reis mit Fleisch? Das schmeckt fast allen, und es geht ziemlich schnell.",
+     "n": "Ablehnung + Grund + Gegenvorschlag"
+    },
+    {
+     "w": "B",
+     "t": "Okay, einverstanden. Und ich würde dazu einen leckeren Salat machen, damit das Essen nicht zu schwer ist.",
+     "n": "Zustimmung + eigener Vorschlag"
+    },
+    {
+     "w": "A",
+     "t": "Super Idee! Kommen wir zum nächsten Punkt: Welche Zutaten brauchen wir?",
+     "n": "Zustimmung + nächste Frage"
+    },
+    {
+     "w": "B",
+     "t": "Für das Hauptgericht brauchen wir Reis, Hähnchenfleisch, Zwiebeln, Karotten und Gewürze. Für den Salat Tomaten, Gurken und vielleicht etwas Feta.",
+     "n": "Antwort"
+    },
+    {
+     "w": "A",
+     "t": "Genau. Und wir sollten auch an Getränke denken, zum Beispiel Saft und Mineralwasser. Wer kauft das alles ein?",
+     "n": "Ergänzung + Frage"
+    },
+    {
+     "w": "B",
+     "t": "Ich kann das machen, weil der Supermarkt direkt neben meinem Haus ist. Aber es wird ziemlich viel zum Tragen.",
+     "n": "Vorschlag + Grund"
+    },
+    {
+     "w": "A",
+     "t": "Dann lass uns zusammen gehen und die Kosten teilen. Ich habe ein Auto, so müssen wir nichts schleppen.",
+     "n": "Gegenvorschlag"
+    },
+    {
+     "w": "B",
+     "t": "Das passt mir gut. Und wann und wo wollen wir kochen? Am Samstagabend vielleicht?",
+     "n": "Zustimmung + nächste Frage"
+    },
+    {
+     "w": "A",
+     "t": "Samstagabend geht bei mir leider nicht, denn ich habe schon einen Termin. Wäre dir Sonntag gegen 13 Uhr recht? Dann essen wir zusammen zu Mittag.",
+     "n": "Ablehnung + Grund + Gegenvorschlag"
+    },
+    {
+     "w": "B",
+     "t": "Sonntag ist perfekt. Wir können bei mir zu Hause kochen, meine Küche ist ziemlich groß.",
+     "n": "Zustimmung + Vorschlag"
+    },
+    {
+     "w": "A",
+     "t": "Gern! Sollen wir noch jemanden einladen? Kochen macht mit mehr Leuten mehr Spaß.",
+     "n": "Frage"
+    },
+    {
+     "w": "B",
+     "t": "Wie wäre es mit meiner Freundin Lena und meiner Nachbarin, Frau Kurz? Frau Kurz ist erst vor Kurzem eingezogen und kennt hier noch niemanden.",
+     "n": "Vorschlag + Grund"
+    },
+    {
+     "w": "A",
+     "t": "Das finde ich sehr nett von dir. Mir ist noch etwas eingefallen: Wer bringt den Nachtisch mit?",
+     "n": "Zustimmung + eigener Punkt «…»"
+    },
+    {
+     "w": "B",
+     "t": "Lena backt sehr gern, ich frage sie, ob sie einen Kuchen mitbringen kann.",
+     "n": "Antwort"
+    },
+    {
+     "w": "A",
+     "t": "Prima. Also, wir haben entschieden: Wir kochen am Sonntag um 13 Uhr bei dir Reis mit Fleisch und einen Salat. Am Samstag kaufen wir zusammen ein und teilen die Kosten. Lena und deine Nachbarin laden wir auch ein, und Lena bringt vielleicht einen Kuchen mit.",
+     "n": "Zusammenfassung"
+    },
+    {
+     "w": "B",
+     "t": "Genau, so machen wir es. Ich freue mich schon darauf!",
+     "n": ""
+    }
+   ]
+  },
+  {
+   "title": "Dialog 7: Einem Freund beim Umzug helfen",
+   "task": "Ein Freund von Ihnen zieht bald um. Er bittet Sie um Hilfe. Wann sollen Sie helfen? · Was brauchen Sie? · Was können Sie machen (Kartons, Auto, abbauen, aufbauen)? · Wen wollen Sie noch mitnehmen? · Wie lange dauert es? · …",
+   "lines": [
+    {
+     "w": "A",
+     "t": "Hast du schon gehört, dass Daniel nächsten Monat umzieht? Er hat mich gefragt, ob wir ihm helfen können. Was meinst du, wann passt es uns am besten?",
+     "n": "Thema + Frage"
+    },
+    {
+     "w": "B",
+     "t": "Ja, er hat es mir auch erzählt. Ich würde vorschlagen, dass wir am Freitagnachmittag helfen. Dann haben wir das ganze Wochenende, um alles einzuräumen.",
+     "n": "Vorschlag + Grund"
+    },
+    {
+     "w": "A",
+     "t": "Freitag geht bei mir leider nicht, weil ich bis 18 Uhr arbeiten muss. Wie wäre es mit Samstag früh, so um acht Uhr? Morgens haben wir mehr Kraft, und es ist noch nicht so heiß.",
+     "n": "Ablehnung + Grund + Gegenvorschlag"
+    },
+    {
+     "w": "B",
+     "t": "Okay, Samstag um acht ist in Ordnung. Und was brauchen wir alles?",
+     "n": "Zustimmung + nächste Frage"
+    },
+    {
+     "w": "A",
+     "t": "Wir brauchen auf jeden Fall viele Kartons, Klebeband und alte Decken, damit die Möbel nicht kaputtgehen. Die Kartons bekommt man kostenlos im Supermarkt, wenn man nett fragt.",
+     "n": "Antwort + Tipp"
+    },
+    {
+     "w": "B",
+     "t": "Gute Idee. Außerdem brauchen wir einen Transporter. Mein Auto ist zu klein für ein Sofa und einen Schrank.",
+     "n": "Ergänzung + Grund"
+    },
+    {
+     "w": "A",
+     "t": "Da hast du recht. Wir könnten einen Transporter mieten, das kostet ungefähr 80 Euro am Tag. Ich habe einen Führerschein, ich kann fahren.",
+     "n": "Zustimmung + Vorschlag"
+    },
+    {
+     "w": "B",
+     "t": "Super, dann übernimmst du das Auto. Und wer baut die Möbel ab und wieder auf? Ich bin darin nicht so gut, ehrlich gesagt.",
+     "n": "Aufgaben verteilen + Frage"
+    },
+    {
+     "w": "A",
+     "t": "Kein Problem, ich habe Werkzeug zu Hause und mache das gern. Du könntest mit Daniel die Kartons packen und in der Küche helfen.",
+     "n": "Antwort + Vorschlag"
+    },
+    {
+     "w": "B",
+     "t": "Einverstanden, das klingt nach einem guten Plan. Sollen wir noch jemanden mitnehmen? Zu dritt schaffen wir das wahrscheinlich nicht.",
+     "n": "Zustimmung + Frage"
+    },
+    {
+     "w": "A",
+     "t": "Ich würde meinen Bruder fragen, er ist sehr kräftig.",
+     "n": "Vorschlag"
+    },
+    {
+     "w": "B",
+     "t": "Deine Idee ist gut, aber dein Bruder wohnt doch in München, oder? Vielleicht fragen wir lieber Markus aus unserem Kurs, er wohnt ganz in der Nähe.",
+     "n": "Teilweise Zustimmung + bessere Idee"
+    },
+    {
+     "w": "A",
+     "t": "Stimmt, das ist praktischer. Wie lange wird der Umzug ungefähr dauern, was meinst du?",
+     "n": "Zustimmung + nächste Frage"
+    },
+    {
+     "w": "B",
+     "t": "Daniel hat eine Dreizimmerwohnung im dritten Stock ohne Aufzug. Ich schätze, wir brauchen den ganzen Tag, also ungefähr acht bis neun Stunden.",
+     "n": "Antwort + Begründung"
+    },
+    {
+     "w": "A",
+     "t": "Dann sollten wir auch an das Essen denken. Wer so lange arbeitet, braucht eine Pause. Wir könnten mittags Pizza bestellen.",
+     "n": "eigener Punkt «…»"
+    },
+    {
+     "w": "B",
+     "t": "Ja, das finde ich super. Und Daniel muss vorher bei der Stadt eine Halteverbotszone vor dem Haus beantragen, sonst finden wir keinen Parkplatz für den Transporter.",
+     "n": "Zustimmung + weiterer Punkt"
+    },
+    {
+     "w": "A",
+     "t": "Gut, dass du daran denkst! Also, kurz gesagt: Wir helfen am Samstag ab acht Uhr. Ich miete den Transporter, fahre und baue die Möbel ab und auf. Du packst mit Daniel die Kartons. Markus fragen wir auch, mittags bestellen wir Pizza, und Daniel kümmert sich um die Halteverbotszone.",
+     "n": "Zusammenfassung"
+    },
+    {
+     "w": "B",
+     "t": "Genau. Ich rufe Daniel heute Abend an und erzähle ihm alles.",
+     "n": ""
+    }
+   ]
+  },
+  {
+   "title": "Dialog 13: Sommerfest im Haus organisieren",
+   "task": "Sie sollen zu zweit ein Sommerfest in Ihrem Haus organisieren. Wen wollen Sie einladen? · Wer kann bei der Vorbereitung helfen? · Was wird vor dem Fest gemacht? · Was organisieren Sie zum Essen und Trinken? · Was kostet es und wer bezahlt? · Was sollen die Gäste mitbringen?",
+   "lines": [
+    {
+     "w": "A",
+     "t": "Hallo! Wir sollen ja zusammen das Sommerfest für unser Haus organisieren. Lass uns mit dem ersten Punkt anfangen: Wen laden wir ein?",
+     "n": "Thema + Frage"
+    },
+    {
+     "w": "B",
+     "t": "Ich finde, wir sollten alle Nachbarn einladen, auch die Familien mit Kindern. So lernen wir uns endlich besser kennen. Viele grüßen sich im Treppenhaus nur kurz.",
+     "n": "Vorschlag + Grund"
+    },
+    {
+     "w": "A",
+     "t": "Da hast du recht. Und was hältst du davon, wenn wir auch den Hausmeister und die Vermieterin einladen? Das wäre eine nette Geste.",
+     "n": "Zustimmung + Ergänzung"
+    },
+    {
+     "w": "B",
+     "t": "Ja, warum nicht? Kommen wir zur Vorbereitung. Wer kann uns helfen? Zu zweit schaffen wir das nicht.",
+     "n": "Zustimmung + nächste Frage"
+    },
+    {
+     "w": "A",
+     "t": "Ich würde Familie Yilmaz aus dem Erdgeschoss fragen, sie haben große Tische und Bänke. Und Herr Weber kann bestimmt beim Grillen helfen.",
+     "n": "Vorschlag"
+    },
+    {
+     "w": "B",
+     "t": "Gute Idee. Was müssen wir vor dem Fest erledigen? Ich würde einfach einen Zettel ins Treppenhaus hängen, das reicht.",
+     "n": "Frage + Vorschlag"
+    },
+    {
+     "w": "A",
+     "t": "Das ist nicht schlecht, aber ich habe eine bessere Idee: Wir werfen zusätzlich eine Einladung in jeden Briefkasten. Auf den Zettel achtet nicht jeder. Außerdem müssen wir die Vermieterin fragen, ob wir den Hof benutzen dürfen.",
+     "n": "Teilweise Zustimmung + bessere Idee"
+    },
+    {
+     "w": "B",
+     "t": "Stimmt, ohne Erlaubnis geht es nicht. Das übernehme ich, ich rufe sie morgen an. Und was gibt es zum Essen und Trinken?",
+     "n": "Zustimmung + Aufgabe übernehmen + Frage"
+    },
+    {
+     "w": "A",
+     "t": "Wie wäre es mit einem Grillfest? Im Sommer grillen fast alle gern. Wir sollten aber auch an Vegetarier denken, also auch Gemüse und Käse grillen.",
+     "n": "Vorschlag + Grund"
+    },
+    {
+     "w": "B",
+     "t": "Einverstanden. Als Getränke kaufen wir Wasser, Saft und Limonade. Was meinst du, sollen wir auch Bier kaufen?",
+     "n": "Zustimmung + Frage"
+    },
+    {
+     "w": "A",
+     "t": "Ich würde lieber darauf verzichten, weil viele Kinder dabei sind. Wer Bier möchte, kann es selbst mitbringen.",
+     "n": "Ablehnung + Grund + Alternative"
+    },
+    {
+     "w": "B",
+     "t": "Okay, so machen wir es. Wie viel kostet das alles ungefähr, und wer bezahlt?",
+     "n": "Zustimmung + nächste Frage"
+    },
+    {
+     "w": "A",
+     "t": "Ich schätze etwa 150 Euro für Fleisch, Gemüse, Getränke und Teller. Ich schlage vor, dass jede Wohnung zehn Euro bezahlt. Wir haben zwölf Wohnungen, das reicht also gut.",
+     "n": "Antwort + Vorschlag"
+    },
+    {
+     "w": "B",
+     "t": "Das ist fair. Ich sammle das Geld ein. Und was sollen die Gäste mitbringen?",
+     "n": "Zustimmung + Frage"
+    },
+    {
+     "w": "A",
+     "t": "Jeder könnte einen Salat oder einen Kuchen mitbringen. So haben wir viel Auswahl und probieren Gerichte aus verschiedenen Ländern.",
+     "n": "Vorschlag + Grund"
+    },
+    {
+     "w": "B",
+     "t": "Das finde ich super! Mir ist noch etwas eingefallen: Wir sollten an die Nachtruhe denken. Die Musik muss um 22 Uhr leiser sein, sonst gibt es Ärger.",
+     "n": "Zustimmung + eigener Punkt"
+    },
+    {
+     "w": "A",
+     "t": "Genau. Also, unser Plan ist jetzt: Wir laden alle Nachbarn, den Hausmeister und die Vermieterin ein. Du fragst die Vermieterin wegen des Hofs, ich schreibe die Einladungen. Familie Yilmaz bringt Tische, Herr Weber grillt. Jede Wohnung zahlt zehn Euro, und die Gäste bringen Salate oder Kuchen mit. Um 22 Uhr machen wir die Musik leiser.",
+     "n": "Zusammenfassung"
+    },
+    {
+     "w": "B",
+     "t": "Perfekt, dann kann das Fest kommen!",
+     "n": ""
+    }
+   ]
+  },
+  {
+   "title": "Dialog 16: Zur Hochzeit in eine andere Stadt fahren",
+   "task": "Ein Freund von Ihnen heiratet bald in einer anderen Stadt. Sie wollen zu zweit zur Hochzeit fahren. Wann möchten Sie fahren? Wo treffen Sie sich? · Wie fahren Sie? · Übernachtung? · Wen möchten Sie mitnehmen? · Geschenk?",
+   "lines": [
+    {
+     "w": "A",
+     "t": "Hast du auch die Einladung von Thomas bekommen? Ich kann es kaum glauben, dass er heiratet! Wir sollten zusammen nach Hamburg fahren. Wann möchtest du losfahren?",
+     "n": "Thema + Frage"
+    },
+    {
+     "w": "B",
+     "t": "Ja, ich habe mich riesig gefreut. Die Hochzeit ist am Samstag um 14 Uhr. Ich würde vorschlagen, dass wir am Samstag ganz früh losfahren.",
+     "n": "Vorschlag"
+    },
+    {
+     "w": "A",
+     "t": "Hmm, das finde ich ein bisschen riskant. Wenn wir im Stau stehen oder der Zug Verspätung hat, kommen wir zu spät. Was hältst du davon, wenn wir schon am Freitagabend fahren?",
+     "n": "Ablehnung + Grund + Gegenvorschlag"
+    },
+    {
+     "w": "B",
+     "t": "Da hast du recht, sicher ist sicher. Freitag nach der Arbeit passt mir. Wo treffen wir uns?",
+     "n": "Zustimmung + nächste Frage"
+    },
+    {
+     "w": "A",
+     "t": "Am besten direkt am Hauptbahnhof, um halb sieben vor der Information.",
+     "n": "Antwort"
+    },
+    {
+     "w": "B",
+     "t": "Moment, du willst also mit dem Zug fahren? Ich dachte eher an das Auto. Dann sind wir flexibler und müssen nicht so viel Gepäck schleppen.",
+     "n": "Nachfrage + Gegenvorschlag"
+    },
+    {
+     "w": "A",
+     "t": "Das Auto hat Vorteile, aber am Freitagabend ist auf der Autobahn immer viel Berufsverkehr. Mit dem Zug können wir uns unterwegs entspannen, und wenn wir früh buchen, gibt es günstige Sparpreise.",
+     "n": "Teilweise Zustimmung + Begründung"
+    },
+    {
+     "w": "B",
+     "t": "Okay, du hast mich überzeugt. Ich buche heute noch die Fahrkarten. Und wo übernachten wir?",
+     "n": "Zustimmung + Aufgabe übernehmen + Frage"
+    },
+    {
+     "w": "A",
+     "t": "Wie wäre es mit dem Hotel, in dem auch die Feier stattfindet? Dann müssen wir nachts nicht mehr fahren.",
+     "n": "Vorschlag + Grund"
+    },
+    {
+     "w": "B",
+     "t": "Das ist sicher sehr bequem, aber vermutlich auch sehr teuer. Ich schlage vor, dass wir ein Doppelzimmer in einer Pension in der Nähe nehmen. Bis zum Hotel sind es dann nur zehn Minuten zu Fuß.",
+     "n": "Teilweise Zustimmung + bessere Idee"
+    },
+    {
+     "w": "A",
+     "t": "Einverstanden, das ist ein guter Kompromiss. Sollen wir noch jemanden mitnehmen? Vielleicht deine Freundin?",
+     "n": "Zustimmung + Frage"
+    },
+    {
+     "w": "B",
+     "t": "Sie würde gern mitkommen, aber sie ist nicht eingeladen. Ich glaube, wir sollten Thomas vorher fragen, ob das in Ordnung ist.",
+     "n": "Antwort + Vorschlag"
+    },
+    {
+     "w": "A",
+     "t": "Genau, das ist höflicher. Kommen wir zum letzten Punkt: Was schenken wir dem Brautpaar?",
+     "n": "Zustimmung + nächste Frage"
+    },
+    {
+     "w": "B",
+     "t": "Ich habe gehört, dass die beiden eine Hochzeitsreise nach Italien planen. Wir könnten ihnen Geld schenken, und zwar in einer schönen Karte.",
+     "n": "Vorschlag + Grund"
+    },
+    {
+     "w": "A",
+     "t": "Gute Idee, Geld ist immer praktisch. Aber nur Geld ist ein bisschen langweilig. Lass uns zusätzlich ein Fotoalbum mit Bildern von Thomas basteln, das wird bestimmt lustig.",
+     "n": "Zustimmung + Ergänzung"
+    },
+    {
+     "w": "B",
+     "t": "Das finde ich super! Und wir dürfen nicht vergessen, Thomas bis Ende des Monats zu antworten, dass wir kommen.",
+     "n": "Zustimmung + eigener Punkt"
+    },
+    {
+     "w": "A",
+     "t": "Stimmt. Also, wir haben entschieden: Wir fahren am Freitag um halb sieben mit dem Zug ab Hauptbahnhof, du buchst die Tickets. Wir übernachten in einer Pension in der Nähe. Wegen deiner Freundin fragen wir Thomas, und wir schenken Geld für die Hochzeitsreise und ein selbst gemachtes Fotoalbum.",
+     "n": "Zusammenfassung"
+    },
+    {
+     "w": "B",
+     "t": "Super, ich freue mich schon auf die Feier!",
+     "n": ""
+    }
+   ]
+  },
+  {
+   "title": "Dialog 30: Kursausflug bei schlechtem Wetter",
+   "task": "Morgen möchte Ihr Deutschkurs einen Ausflug machen, aber leider ist das Wetter schlecht. Planen Sie, wie der Ausflug trotzdem Spaß macht. Ausflug: Wohin? · Welche Aktivitäten? · Was mitnehmen? · Wie die anderen informieren? · …",
+   "lines": [
+    {
+     "w": "A",
+     "t": "Hast du schon den Wetterbericht gesehen? Morgen soll es den ganzen Tag regnen, und es wird ziemlich kalt. Unsere Wanderung können wir also vergessen. Was machen wir jetzt?",
+     "n": "Thema + Frage"
+    },
+    {
+     "w": "B",
+     "t": "Schade, aber wir müssen den Ausflug ja nicht absagen. Wir könnten stattdessen ins Stadtmuseum gehen. Dort gibt es gerade eine Ausstellung über die Geschichte der Stadt, und wir lernen dabei sogar etwas.",
+     "n": "Gegenvorschlag + Grund"
+    },
+    {
+     "w": "A",
+     "t": "Die Idee ist nicht schlecht, aber ich befürchte, dass ein ganzer Tag im Museum für manche langweilig ist. Was hältst du davon, wenn wir am Vormittag ins Museum gehen und am Nachmittag etwas Aktives machen?",
+     "n": "Teilweise Zustimmung + Bedenken + Vorschlag"
+    },
+    {
+     "w": "B",
+     "t": "Das klingt gut. Was für eine Aktivität meinst du genau?",
+     "n": "Zustimmung + Nachfrage"
+    },
+    {
+     "w": "A",
+     "t": "Zum Beispiel Bowling. Das macht in der Gruppe viel Spaß, und man muss dafür kein Profi sein.",
+     "n": "Antwort + Grund"
+    },
+    {
+     "w": "B",
+     "t": "Bowling finde ich super, aber ist das nicht ziemlich teuer für zwölf Personen?",
+     "n": "Zustimmung + Bedenken"
+    },
+    {
+     "w": "A",
+     "t": "Ich habe nachgeschaut: Für Gruppen kostet eine Bahn ungefähr 25 Euro pro Stunde. Wenn wir drei Bahnen mieten, zahlt jeder nur etwa sechs Euro.",
+     "n": "Antwort + Begründung"
+    },
+    {
+     "w": "B",
+     "t": "Dann ist es in Ordnung. Danach könnten wir noch zusammen ins Café gehen und uns aufwärmen. Dort können wir auch Deutsch sprechen üben.",
+     "n": "Zustimmung + Ergänzung"
+    },
+    {
+     "w": "A",
+     "t": "Gern, das passt gut. Kommen wir zum nächsten Punkt: Was müssen wir mitnehmen?",
+     "n": "Zustimmung + nächste Frage"
+    },
+    {
+     "w": "B",
+     "t": "Auf jeden Fall einen Regenschirm und eine warme, wasserdichte Jacke. Und vielleicht Sandwiches für die Mittagspause?",
+     "n": "Antwort + Vorschlag"
+    },
+    {
+     "w": "A",
+     "t": "Essen brauchen wir eigentlich nicht mitzunehmen, weil wir sowieso ins Café gehen. Im Museum darf man meistens auch nicht essen. Wichtig sind aber Socken fürs Bowling, die Schuhe bekommt man dort.",
+     "n": "Ablehnung + Grund + eigener Tipp"
+    },
+    {
+     "w": "B",
+     "t": "Ach so, das wusste ich nicht. Gut, dass du daran denkst. Wie informieren wir die anderen?",
+     "n": "Zustimmung + nächste Frage"
+    },
+    {
+     "w": "A",
+     "t": "Ich würde in unsere WhatsApp-Gruppe schreiben. Dann wissen es alle heute noch.",
+     "n": "Vorschlag + Grund"
+    },
+    {
+     "w": "B",
+     "t": "Einverstanden. Wir könnten dort gleich eine Umfrage machen, wer mitkommt. Dann wissen wir, wie viele Bowlingbahnen wir reservieren müssen. Außerdem sollten wir unserer Lehrerin Bescheid sagen.",
+     "n": "Zustimmung + Ergänzung + eigener Punkt"
+    },
+    {
+     "w": "A",
+     "t": "Stimmt, das hätte ich fast vergessen. Also, kurz gesagt: Wir treffen uns morgen um zehn Uhr am Stadtmuseum. Am Nachmittag gehen wir bowlen und danach ins Café. Jeder nimmt einen Regenschirm und Socken mit. Ich schreibe in die WhatsApp-Gruppe und mache eine Umfrage, und du sprichst mit unserer Lehrerin und reservierst die Bahnen.",
+     "n": "Zusammenfassung"
+    },
+    {
+     "w": "B",
+     "t": "Prima, so wird der Ausflug trotz Regen bestimmt schön!",
+     "n": ""
+    }
+   ]
+  },
+  {
+   "title": "Dialog 32: Müll auf dem Weg zur Sprachschule sammeln",
+   "task": "Auf dem Weg zur Sprachschule gibt es viel Müll. Sie wollen zusammen den Weg saubermachen. Wann treffen? Warum? · Wer macht mit? · Andere motivieren · Wohin mit dem Müll? · Notwendige Materialien",
+   "lines": [
+    {
+     "w": "A",
+     "t": "Ist dir auch aufgefallen, wie viel Müll auf dem Weg zu unserer Sprachschule liegt? Überall Flaschen, Plastiktüten und Zigaretten. Ich finde, wir sollten etwas dagegen tun.",
+     "n": "Thema"
+    },
+    {
+     "w": "B",
+     "t": "Ja, das stört mich auch jeden Tag. Lass uns doch eine Müllsammelaktion organisieren! Wann wollen wir uns treffen? Wie wäre es mit Donnerstag nach dem Unterricht?",
+     "n": "Zustimmung + Vorschlag"
+    },
+    {
+     "w": "A",
+     "t": "Donnerstag passt mir leider nicht, weil wir viele Hausaufgaben für Freitag haben. Ich schlage vor, dass wir uns am Freitag direkt nach dem Unterricht treffen. Dann sind alle sowieso schon in der Schule, und danach beginnt das Wochenende.",
+     "n": "Ablehnung + Grund + Gegenvorschlag"
+    },
+    {
+     "w": "B",
+     "t": "Einverstanden, Freitag ist sogar besser. Wer soll mitmachen? Nur wir zwei?",
+     "n": "Zustimmung + nächste Frage"
+    },
+    {
+     "w": "A",
+     "t": "Nein, auf keinen Fall. Die anderen Teilnehmer sollten auch mitmachen, weil sie diesen Weg auch jeden Tag gehen. Und je mehr Leute helfen, desto schneller sind wir fertig. Wir können auch Freunde mitbringen.",
+     "n": "Antwort + Begründung"
+    },
+    {
+     "w": "B",
+     "t": "Das stimmt. Aber wie motivieren wir die anderen? Viele haben am Freitag bestimmt keine Lust.",
+     "n": "Zustimmung + Bedenken + Frage"
+    },
+    {
+     "w": "A",
+     "t": "Wir könnten ein Plakat schreiben und es im Kursraum aufhängen. Und als Belohnung gehen wir nach dem Müllsammeln alle zusammen ins Café.",
+     "n": "Vorschlag"
+    },
+    {
+     "w": "B",
+     "t": "Das Café ist eine tolle Idee! Ein Plakat sieht aber nicht jeder. Ich würde zusätzlich in unsere Kursgruppe schreiben und erklären, warum die Aktion wichtig ist, zum Beispiel für die Tiere und die Umwelt.",
+     "n": "Teilweise Zustimmung + Ergänzung"
+    },
+    {
+     "w": "A",
+     "t": "Gut, so machen wir es. Und wohin bringen wir den Müll am Ende?",
+     "n": "Zustimmung + nächste Frage"
+    },
+    {
+     "w": "B",
+     "t": "In der Nähe der Sprachschule gibt es Mülltonnen. Wir sollten den Müll aber gleich trennen: Plastik in die gelbe Tonne, Papier in die blaue und den Rest in den Restmüll. Flaschen mit Pfand bringen wir in den Supermarkt.",
+     "n": "Antwort + Vorschlag"
+    },
+    {
+     "w": "A",
+     "t": "Sehr gut! Mit dem Pfandgeld können wir vielleicht sogar einen Teil vom Café bezahlen. Moment, mir ist noch etwas eingefallen: Wir sollten im Büro der Schule nachfragen, ob wir die großen Tonnen im Hof benutzen dürfen.",
+     "n": "Zustimmung + eigener Punkt"
+    },
+    {
+     "w": "B",
+     "t": "Stimmt, das übernehme ich. Und welche Materialien brauchen wir?",
+     "n": "Aufgabe übernehmen + nächste Frage"
+    },
+    {
+     "w": "A",
+     "t": "Wir brauchen große Mülltüten, Handschuhe und am besten Müllzangen, damit wir nichts mit den Händen anfassen müssen. Außerdem sollte jeder alte Kleidung anziehen.",
+     "n": "Antwort"
+    },
+    {
+     "w": "B",
+     "t": "Müllzangen sind teuer. Ich habe aber gehört, dass man sie bei der Stadtreinigung kostenlos ausleihen kann, wenn man eine Sammelaktion anmeldet. Das könnte ich morgen erledigen.",
+     "n": "Bedenken + Lösung"
+    },
+    {
+     "w": "A",
+     "t": "Perfekt. Also, unser Plan ist jetzt: Wir sammeln am Freitag nach dem Unterricht Müll. Wir laden alle Teilnehmer und Freunde ein, mit einem Plakat und einer Nachricht in der Gruppe. Den Müll trennen wir, du fragst im Büro nach den Tonnen und leihst die Zangen bei der Stadt aus. Handschuhe und Tüten kaufe ich, und am Ende gehen wir alle ins Café.",
+     "n": "Zusammenfassung"
+    },
+    {
+     "w": "B",
+     "t": "Super, so machen wir es. Dann ist unser Schulweg bald wieder sauber!",
+     "n": ""
+    }
+   ]
+  }
+ ]
+}

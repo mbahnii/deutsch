@@ -188,7 +188,113 @@ function showSection(s) {
   $('doc').innerHTML = html;
 }
 
+
+// ---------- плеер: диалоги и тексты с озвучкой ----------
+// В странице .md стоит блок <div class="player" data-src="content/players/x.json" data-audio="audio/x"></div>,
+// а сюда он превращается в плеер. Файлы озвучки лежат в audio/<имя>/<набор голосов>/<раздел>-<строка>.mp3
+const PL = {
+  uk: { section: 'Діалог', voices: 'Голоси', setDe: 'Німеччина (Tanja і Christoph)', setAt: 'Австрія (Ingrid і Jonas)', speed: 'Темп', play: '▶ Слухати', pause: '❚❚ Пауза', stop: '■ Стоп', again: '↻ Ще раз фразу',
+        gap: 'Пауза після кожної фрази (щоб повторювати вголос)', tip: 'Торкнись фрази, щоб слухати з неї.', task: 'Завдання', variant: 'Варіант', questions: 'Можливі питання', desc: 'На фото', err: 'Не вдалося відтворити звук' },
+  ru: { section: 'Диалог', voices: 'Голоса', setDe: 'Германия (Tanja и Christoph)', setAt: 'Австрия (Ingrid и Jonas)', speed: 'Темп', play: '▶ Слушать', pause: '❚❚ Пауза', stop: '■ Стоп', again: '↻ Ещё раз фразу',
+        gap: 'Пауза после каждой фразы (чтобы повторять вслух)', tip: 'Нажми на фразу, чтобы слушать с неё.', task: 'Задание', variant: 'Вариант', questions: 'Возможные вопросы', desc: 'На фото', err: 'Не удалось воспроизвести звук' },
+  en: { section: 'Dialogue', voices: 'Voices', setDe: 'Germany (Tanja and Christoph)', setAt: 'Austria (Ingrid and Jonas)', speed: 'Speed', play: '▶ Listen', pause: '❚❚ Pause', stop: '■ Stop', again: '↻ Repeat line',
+        gap: 'Pause after each line (to repeat aloud)', tip: 'Tap a line to listen from there.', task: 'Task', variant: 'Variant', questions: 'Possible questions', desc: 'In the photo', err: 'Could not play the audio' },
+};
+let plStop = null; // функция, которая останавливает текущий плеер при уходе со страницы
+const lsGet = (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } };
+const lsSet = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
+
+async function initPlayers(root) {
+  for (const box of root.querySelectorAll('.player[data-src]')) {
+    let data;
+    try { data = await (await fetch(box.dataset.src + bust)).json(); } catch (e) { continue; }
+    buildPlayer(box, data.sections, box.dataset.audio);
+  }
+}
+
+function buildPlayer(box, secs, audioDir) {
+  const L = PL[LANG];
+  const au = new Audio();
+  let cur = 0, idx = 0, playing = false, timer = null, token = 0;
+  const set = () => lsGet('plset') === 'at' ? 'at' : 'de';
+  box.innerHTML = `
+    <div class="pl-bar">
+      <select class="pl-sec" aria-label="${esc(L.section)}">${secs.map((s, i) => `<option value="${i}">${esc(s.title)}</option>`).join('')}</select>
+      <div class="pl-row">
+        <button class="pl-play primary" type="button"></button>
+        <button class="pl-stop" type="button">${L.stop}</button>
+        <button class="pl-again" type="button">${L.again}</button>
+      </div>
+      <div class="pl-row">
+        <label>${L.voices}
+          <select class="pl-set"><option value="de">${esc(L.setDe)}</option><option value="at">${esc(L.setAt)}</option></select>
+        </label>
+        <label class="pl-speed">${L.speed} <input class="pl-rate" type="range" min="0.6" max="1.3" step="0.05" value="1"> <span class="pl-rv">1.00</span></label>
+      </div>
+      <label class="pl-chk"><input class="pl-gap" type="checkbox"> ${L.gap}</label>
+    </div>
+    <div class="pl-task"></div>
+    <div class="pl-lines"></div>
+    <div class="pl-extra"></div>
+    <p class="pl-tip muted">${L.tip}</p>`;
+  const q = (c) => box.querySelector(c);
+  const btn = q('.pl-play');
+  const label = () => { btn.textContent = playing ? L.pause : L.play; };
+  q('.pl-set').value = set();
+  const rate = parseFloat(lsGet('plrate'));
+  if (rate >= 0.6 && rate <= 1.3) { q('.pl-rate').value = rate; q('.pl-rv').textContent = rate.toFixed(2); }
+  q('.pl-gap').checked = lsGet('plgap') === '1';
+
+  function render() {
+    const s = secs[cur];
+    const parts = [];
+    if (s.task) parts.push(`<b>${s.lines.some((l) => l.w === 'M') ? esc(L.desc) : esc(L.task)}:</b> ${esc(s.task)}`);
+    q('.pl-task').innerHTML = parts.join('');
+    q('.pl-lines').innerHTML = s.lines.map((l, i) =>
+      `<div class="pl-line" data-i="${i}"><span class="pl-who ${l.w}">${l.w === 'M' ? '🗣' : l.w}</span><span class="pl-txt">${l.w === 'M' && l.n ? `<b class="pl-tag">${esc(l.n)}</b> ` : ''}${esc(l.t)}${l.w !== 'M' && l.n ? `<em class="pl-note">${esc(l.n)}</em>` : ''}</span></div>`).join('');
+    let extra = '';
+    if (s.variant) extra += `<p><b>${esc(L.variant)}:</b> ${esc(s.variant)}</p>`;
+    if (s.questions) extra += `<p><b>${esc(L.questions)}:</b> ${esc(s.questions)}</p>`;
+    q('.pl-extra').innerHTML = extra;
+    q('.pl-lines').querySelectorAll('.pl-line').forEach((el) => el.addEventListener('click', () => start(+el.dataset.i)));
+    mark(-1);
+  }
+  function mark(i) {
+    box.querySelectorAll('.pl-line').forEach((e) => e.classList.toggle('on', +e.dataset.i === i));
+    const a = box.querySelector('.pl-line.on');
+    if (a) { const r = a.getBoundingClientRect(); if (r.top < 90 || r.bottom > innerHeight - 40) a.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
+  }
+  function stop() { token++; clearTimeout(timer); au.pause(); playing = false; label(); }
+  plStop = stop;
+  function speak(i, once) {
+    const s = secs[cur];
+    if (i >= s.lines.length) { stop(); idx = 0; mark(-1); return; }
+    idx = i; mark(i);
+    const my = token;
+    au.src = `${audioDir}/${set()}/${cur}-${i}.mp3`;
+    au.playbackRate = +q('.pl-rate').value;
+    au.onended = () => {
+      if (my !== token || !playing) return;
+      if (once) { playing = false; label(); return; }
+      const wait = q('.pl-gap').checked ? Math.max(2500, au.duration * 1000 * 1.1) : 350;
+      timer = setTimeout(() => { if (my === token && playing) speak(i + 1, false); }, wait);
+    };
+    au.onerror = () => { if (my === token) { stop(); q('.pl-tip').textContent = L.err; } };
+    au.play().catch(() => {});
+  }
+  function start(i, once) { token++; clearTimeout(timer); au.pause(); playing = true; label(); speak(i, once); }
+  btn.onclick = () => { if (playing) { stop(); } else start(idx >= secs[cur].lines.length ? 0 : idx); };
+  q('.pl-stop').onclick = () => { stop(); idx = 0; mark(-1); };
+  q('.pl-again').onclick = () => start(idx, true);
+  q('.pl-sec').onchange = (e) => { stop(); cur = +e.target.value; idx = 0; render(); };
+  q('.pl-set').onchange = (e) => { lsSet('plset', e.target.value); if (playing) start(idx); };
+  q('.pl-rate').oninput = (e) => { q('.pl-rv').textContent = (+e.target.value).toFixed(2); au.playbackRate = +e.target.value; lsSet('plrate', e.target.value); };
+  q('.pl-gap').onchange = (e) => lsSet('plgap', e.target.checked ? '1' : '0');
+  label(); render();
+}
+
 async function showPage(found, anchor) {
+  if (plStop) { plStop(); plStop = null; }
   const { section, group, page } = found;
   document.title = page.title + ' — Deutsch';
   renderTabs(section.id);
@@ -239,6 +345,7 @@ async function showPage(found, anchor) {
       heads.map((h) => `<a class="${h.tagName === 'H3' ? 'lvl3' : ''}" data-id="${h.id}" href="#/${page.slug}">${esc(h.textContent)}</a>`).join('')
     : '';
   watchHeadings(heads);
+  initPlayers(doc);
   if (anchor && document.getElementById(anchor)) document.getElementById(anchor).scrollIntoView();
 }
 

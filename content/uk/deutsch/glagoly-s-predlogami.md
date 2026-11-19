@@ -88,3 +88,17 @@
 - **Kindern** — лише Dativ: *mit den Kindern, bei den Kindern*.
 
 У Dativ множини майже всі іменники отримують -n: *bei den Spielen, mit den Eltern*.
+
+## bitten, sich freuen, sich ändern
+
+| Німецькою | Значення | Примітка |
+| --- | --- | --- |
+| jemanden bitten, … zu … | просити когось зробити щось | без *um*: *Ich möchte Sie bitten, die Fenster zu reparieren.* |
+| sich freuen auf + Akkusativ | чекати з радістю (майбутнє) | *Ich freue mich auf Ihre Antwort.* |
+| sich freuen über + Akkusativ | радіти тому, що є | з *würde* пишемо *über*: *Über eine schnelle Antwort würde ich mich freuen.* |
+| sich ändern | змінюватися | зворотне: *Leider hat sich noch nichts geändert.* |
+| sich kümmern um + Akkusativ | подбати про | *Bitte kümmern Sie sich darum.* |
+| jemandem etwas mitteilen | повідомити | точніше й ввічливіше, ніж *sagen*: *Dieses Problem habe ich Ihnen schon telefonisch mitgeteilt.* |
+| sich beschweren über + Akkusativ | скаржитися на | *Ich muss mich über die Lieferung beschweren.* |
+
+Див. також [Правила листа](#/dtz/pisma-pravila).

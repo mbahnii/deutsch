@@ -254,3 +254,26 @@ a:hover { text-decoration: underline; }
   .module-head { padding: 14px; }
   .module .pgrid { padding: 12px; }
 }
+
+/* ---------- плеер ---------- */
+.player { margin: 18px 0 26px; }
+.pl-bar { position: sticky; top: calc(var(--topbar-h) + 8px); z-index: 4; background: var(--bg); border: 1px solid var(--line); border-radius: 14px; padding: 12px; display: grid; gap: 10px; }
+.pl-bar select, .pl-bar button { font: inherit; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg-soft); color: var(--text); cursor: pointer; max-width: 100%; }
+.pl-bar button.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+.pl-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.pl-row label { display: flex; gap: 8px; align-items: center; font-size: 14px; color: var(--muted); flex-wrap: wrap; }
+.pl-speed input { width: 130px; }
+.pl-chk { font-size: 14px; color: var(--muted); display: flex; gap: 8px; align-items: center; }
+.pl-task { margin: 12px 0; padding: 10px 12px; border-radius: 12px; background: var(--bg-soft); font-size: 15px; }
+.pl-task:empty { display: none; }
+.pl-line { display: flex; gap: 10px; padding: 10px 12px; margin: 6px 0; border: 1px solid var(--line); border-radius: 12px; cursor: pointer; transition: background .25s ease, border-color .25s ease; }
+.pl-line.on { background: var(--accent-soft); border-color: var(--accent); }
+.pl-who { font-weight: 700; min-width: 20px; }
+.pl-who.A { color: var(--accent-ink); }
+.pl-who.B { color: #b4572f; }
+.pl-note { display: block; font-size: 13px; color: var(--muted); margin-top: 2px; font-style: normal; }
+.pl-tag { color: var(--accent-ink); }
+.pl-extra p { margin: 8px 0; }
+.pl-tip { font-size: 13px; }
+
+@media (max-width: 760px) { .pl-bar { position: static; } }

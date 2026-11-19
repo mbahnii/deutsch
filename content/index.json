@@ -41,7 +41,23 @@
             "ru": "Формат, время, баллы.",
             "en": "Format, timing, scoring."
           },
-          "pages": []
+          "pages": [
+            {
+              "slug": "dtz/sovety-ekzamen",
+              "type": "rule",
+              "title": {
+                "uk": "Поради до іспиту",
+                "ru": "Советы к экзамену",
+                "en": "Exam tips"
+              },
+              "desc": {
+                "uk": "Бланк, Hören, Lesen, Schreiben, Sprechen і що буде, якщо перегорнути сторінку.",
+                "ru": "Бланк, Hören, Lesen, Schreiben, Sprechen и что будет, если перевернуть страницу.",
+                "en": "Answer sheet, Hören, Lesen, Schreiben, Sprechen and what happens if you turn the page early."
+              },
+              "updated": "2026-11-19"
+            }
+          ]
         },
         {
           "title": {
@@ -100,6 +116,81 @@
                 "en": "Questions for a landlord, a corrected email and words on the topic of housing."
               },
               "updated": "2026-11-11"
+            },
+            {
+              "slug": "dtz/pisma-pravila",
+              "type": "rule",
+              "title": {
+                "uk": "Правила листа",
+                "ru": "Правила письма",
+                "en": "Letter rules"
+              },
+              "desc": {
+                "uk": "Du чи Sie, звертання, структура, критерії на 20 з 20 і перевірка.",
+                "ru": "Du или Sie, обращение, структура, критерии на 20 из 20 и проверка.",
+                "en": "Du or Sie, greetings, structure, criteria for 20 out of 20 and a final check."
+              },
+              "updated": "2026-11-19"
+            },
+            {
+              "slug": "dtz/pisma-redemittel",
+              "type": "phr",
+              "title": {
+                "uk": "Фрази для листів",
+                "ru": "Фразы для писем",
+                "en": "Phrases for letters"
+              },
+              "desc": {
+                "uk": "Формальні й неформальні фрази для вступу, прохань, скарг, відмов і завершення.",
+                "ru": "Формальные и неформальные фразы для вступления, просьб, жалоб, отказов и завершения.",
+                "en": "Formal and informal phrases for openings, requests, complaints, refusals and endings."
+              },
+              "updated": "2026-11-19"
+            },
+            {
+              "slug": "dtz/musterbriefe",
+              "type": "phr",
+              "title": {
+                "uk": "8 зразкових листів",
+                "ru": "8 образцовых писем",
+                "en": "8 model letters"
+              },
+              "desc": {
+                "uk": "Листи на 20 з 20 за повними завданнями з пунктами.",
+                "ru": "Письма на 20 из 20 по полным заданиям с пунктами.",
+                "en": "Letters for 20 out of 20 on full tasks with points."
+              },
+              "updated": "2026-11-19"
+            },
+            {
+              "slug": "dtz/razbor-okna",
+              "type": "fix",
+              "title": {
+                "uk": "Лист про вікна",
+                "ru": "Письмо про окна",
+                "en": "Letter about the windows"
+              },
+              "desc": {
+                "uk": "Оцінка, помилки і виправлений лист орендодавцю.",
+                "ru": "Оценка, ошибки и исправленное письмо арендодателю.",
+                "en": "Score, mistakes and a corrected letter to a landlord."
+              },
+              "updated": "2026-11-19"
+            },
+            {
+              "slug": "dtz/razbor-sosed",
+              "type": "fix",
+              "title": {
+                "uk": "Лист другові про відпустку",
+                "ru": "Письмо другу про отпуск",
+                "en": "Letter to a friend about a holiday"
+              },
+              "desc": {
+                "uk": "Змішування du і Sie та інші помилки неформального листа.",
+                "ru": "Смешение du и Sie и другие ошибки неформального письма.",
+                "en": "Mixing du and Sie and other mistakes in an informal letter."
+              },
+              "updated": "2026-11-19"
             }
           ]
         },
@@ -130,6 +221,51 @@
                 "en": "\"It's about…\", \"on the one hand… on the other…\" and more phrases for the exam and conversation."
               },
               "updated": "2026-11-13"
+            },
+            {
+              "slug": "dtz/sprechen-teil3",
+              "type": "phr",
+              "title": {
+                "uk": "Teil 3: діалоги з озвучкою",
+                "ru": "Teil 3: диалоги с озвучкой",
+                "en": "Teil 3: dialogues with audio"
+              },
+              "desc": {
+                "uk": "Схема, фрази і 6 діалогів, які можна слухати й повторювати.",
+                "ru": "Схема, фразы и 6 диалогов, которые можно слушать и повторять.",
+                "en": "Scheme, phrases and 6 dialogues you can listen to and repeat."
+              },
+              "updated": "2026-11-19"
+            },
+            {
+              "slug": "dtz/sprechen-teil2",
+              "type": "phr",
+              "title": {
+                "uk": "Teil 2: описати фото",
+                "ru": "Teil 2: описать фото",
+                "en": "Teil 2: describe a photo"
+              },
+              "desc": {
+                "uk": "8 фото: опис, розповідь про себе, запитання і озвучка.",
+                "ru": "8 фото: описание, рассказ о себе, вопросы и озвучка.",
+                "en": "8 photos: description, talking about yourself, questions and audio."
+              },
+              "updated": "2026-11-19"
+            },
+            {
+              "slug": "dtz/sprechen-o-sebe",
+              "type": "fix",
+              "title": {
+                "uk": "Розповідь про себе",
+                "ru": "Рассказ о себе",
+                "en": "Talking about yourself"
+              },
+              "desc": {
+                "uk": "Шаблон на 2 хвилини і типові помилки.",
+                "ru": "Шаблон на 2 минуты и типичные ошибки.",
+                "en": "A 2-minute template and typical mistakes."
+              },
+              "updated": "2026-11-19"
             }
           ]
         },
@@ -254,6 +390,36 @@
                 "en": "Why \"möchtete\" doesn't exist and how to say \"wanted\" in the past."
               },
               "updated": "2026-11-13"
+            },
+            {
+              "slug": "deutsch/prityazhatelnye",
+              "type": "rule",
+              "title": {
+                "uk": "Ihre, seine, unsere",
+                "ru": "Ihre, seine, unsere",
+                "en": "Ihre, seine, unsere"
+              },
+              "desc": {
+                "uk": "Як вибрати присвійне слово: власник і рід речі.",
+                "ru": "Как выбрать притяжательное слово: владелец и род вещи.",
+                "en": "How to choose a possessive word: the owner and the thing's gender."
+              },
+              "updated": "2026-11-19"
+            },
+            {
+              "slug": "deutsch/ein-bisschen",
+              "type": "rule",
+              "title": {
+                "uk": "Ein bisschen",
+                "ru": "Ein bisschen",
+                "en": "Ein bisschen"
+              },
+              "desc": {
+                "uk": "Чому тут артикль, і конструкція «einen» + дієслово.",
+                "ru": "Почему здесь артикль, и конструкция «einen» + глагол.",
+                "en": "Why there is an article, and the \"einen\" + verb construction."
+              },
+              "updated": "2026-11-19"
             }
           ]
         },
@@ -283,7 +449,7 @@
                 "ru": "informieren über, sich erkundigen nach… и похожие слова, которые я путаю.",
                 "en": "informieren über, sich erkundigen nach… and similar words I mix up."
               },
-              "updated": "2026-11-11"
+              "updated": "2026-11-19"
             },
             {
               "slug": "deutsch/slova-dom",
@@ -299,6 +465,21 @@
                 "en": "einrichten, pflanzen vs bepflanzen, Balkonkasten and der Schaden."
               },
               "updated": "2026-11-13"
+            },
+            {
+              "slug": "deutsch/razgovor-trener",
+              "type": "phr",
+              "title": {
+                "uk": "Розмова з тренером",
+                "ru": "Разговор с тренером",
+                "en": "Talking to a coach"
+              },
+              "desc": {
+                "uk": "Фрази, щоб записати знайомого на тренування.",
+                "ru": "Фразы, чтобы записать знакомого на тренировку.",
+                "en": "Phrases for getting an acquaintance into a class."
+              },
+              "updated": "2026-11-19"
             }
           ]
         },

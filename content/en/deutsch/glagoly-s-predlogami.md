@@ -88,3 +88,17 @@ The simplest option: *Ich möchte fragen, ob …*
 - **Kindern** — Dativ only: *mit den Kindern, bei den Kindern*.
 
 In the Dativ plural almost all nouns take -n: *bei den Spielen, mit den Eltern*.
+
+## bitten, sich freuen, sich ändern
+
+| German | Meaning | Note |
+| --- | --- | --- |
+| jemanden bitten, … zu … | ask somebody to do something | no *um*: *Ich möchte Sie bitten, die Fenster zu reparieren.* |
+| sich freuen auf + Akkusativ | look forward to (future) | *Ich freue mich auf Ihre Antwort.* |
+| sich freuen über + Akkusativ | be glad about what is there | with *würde* use *über*: *Über eine schnelle Antwort würde ich mich freuen.* |
+| sich ändern | change | reflexive: *Leider hat sich noch nichts geändert.* |
+| sich kümmern um + Akkusativ | take care of | *Bitte kümmern Sie sich darum.* |
+| jemandem etwas mitteilen | inform | more exact and polite than *sagen*: *Dieses Problem habe ich Ihnen schon telefonisch mitgeteilt.* |
+| sich beschweren über + Akkusativ | complain about | *Ich muss mich über die Lieferung beschweren.* |
+
+See also [Letter rules](#/dtz/pisma-pravila).
